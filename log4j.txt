@@ -1,0 +1,60 @@
+2018-09-16 19:11:38,775[ISO8601] [TRACE] [main            ][                Main] - запуск программы
+2018-09-16 19:11:55,347[ISO8601] [ERROR] [main            ][                Main] - ошибка
+java.lang.NullPointerException
+	at Main.processGetDrink(Main.java:67)
+	at Main.main(Main.java:32)
+2018-09-16 19:12:03,121[ISO8601] [WARN ] [main            ][ru.kuznetsov.VendingMachine] - возможно ошибка
+2018-09-16 19:12:03,121[ISO8601] [ERROR] [main            ][                Main] - ошибка
+java.lang.ArrayIndexOutOfBoundsException
+	at ru.kuznetsov.VendingMachine.giveMeADrink(VendingMachine.java:53)
+	at Main.processGetDrink(Main.java:66)
+	at Main.main(Main.java:32)
+2018-09-16 19:14:26,147[ISO8601] [TRACE] [main            ][                Main] - запуск программы
+2018-09-16 19:14:32,562[ISO8601] [TRACE] [main            ][                Main] - запуск метода processAddMoney 
+2018-09-16 19:18:46,421[ISO8601] [TRACE] [main            ][                Main] - запуск программы
+2018-09-16 19:18:50,300[ISO8601] [TRACE] [main            ][                Main] - запуск метода processAddMoney 
+2018-09-16 19:18:50,301[ISO8601] [ERROR] [main            ][                Main] - ошибка замятия купюры
+ru.kuznetsov.exception.CreaseMoneyException: 100.0 руб
+	at ru.kuznetsov.VendingMachine.addMoney(VendingMachine.java:34)
+	at Main.processAddMoney(Main.java:56)
+	at Main.main(Main.java:27)
+2018-09-16 19:18:50,305[ISO8601] [TRACE] [main            ][                Main] -  метод processAddMoney завершился
+2018-09-16 19:18:52,846[ISO8601] [TRACE] [main            ][                Main] - запуск метода processGetDrink
+2018-09-16 19:18:52,846[ISO8601] [ERROR] [main            ][                Main] - ошибка
+java.lang.NullPointerException
+	at Main.processGetDrink(Main.java:73)
+	at Main.main(Main.java:32)
+2018-09-16 19:18:52,846[ISO8601] [TRACE] [main            ][                Main] -  метод processGetDrink завершился
+2018-09-16 19:18:58,920[ISO8601] [TRACE] [main            ][                Main] - запуск метода processAddMoney 
+2018-09-16 19:18:58,922[ISO8601] [TRACE] [main            ][                Main] -  метод processAddMoney завершился
+2018-09-16 19:19:01,185[ISO8601] [TRACE] [main            ][                Main] - запуск метода processGetDrink
+2018-09-16 19:19:01,186[ISO8601] [TRACE] [main            ][                Main] -  метод processGetDrink завершился
+2018-09-16 19:36:44,102[ISO8601] [TRACE] [main            ][                Main] - запуск программы
+2018-09-16 19:36:50,780[ISO8601] [TRACE] [main            ][                Main] - запуск метода processAddMoney 
+2018-09-16 19:36:50,782[ISO8601] [ERROR] [main            ][                Main] - ошибка замятия купюры
+ru.kuznetsov.exception.CreaseMoneyException: 100.0 руб
+	at ru.kuznetsov.VendingMachine.addMoney(VendingMachine.java:36)
+	at Main.processAddMoney(Main.java:56)
+	at Main.main(Main.java:27)
+2018-09-16 19:36:50,791[ISO8601] [TRACE] [main            ][                Main] -  метод processAddMoney завершился
+2018-09-16 19:36:54,879[ISO8601] [TRACE] [main            ][                Main] - запуск метода processAddMoney 
+2018-09-16 19:36:54,879[ISO8601] [TRACE] [main            ][                Main] -  метод processAddMoney завершился
+2018-09-16 19:36:59,878[ISO8601] [TRACE] [main            ][                Main] - запуск метода processGetDrink
+2018-09-16 19:36:59,878[ISO8601] [TRACE] [main            ][ru.kuznetsov.VendingMachine] -  метод isKeyValid запуск
+2018-09-16 19:36:59,878[ISO8601] [ERROR] [main            ][ru.kuznetsov.VendingMachine] - ошибка 
+2018-09-16 19:36:59,878[ISO8601] [TRACE] [main            ][ru.kuznetsov.VendingMachine] - метод isKeyValid завершился
+2018-09-16 19:36:59,878[ISO8601] [WARN ] [main            ][ru.kuznetsov.VendingMachine] - возможна ошибка
+2018-09-16 19:36:59,879[ISO8601] [ERROR] [main            ][                Main] - ошибка
+java.lang.ArrayIndexOutOfBoundsException
+	at ru.kuznetsov.VendingMachine.giveMeADrink(VendingMachine.java:55)
+	at Main.processGetDrink(Main.java:72)
+	at Main.main(Main.java:32)
+2018-09-16 19:36:59,879[ISO8601] [TRACE] [main            ][                Main] -  метод processGetDrink завершился
+2018-09-16 19:38:22,859[ISO8601] [TRACE] [main            ][                Main] - запуск программы
+2018-09-16 19:38:27,508[ISO8601] [TRACE] [main            ][                Main] - запуск метода processAddMoney 
+2018-09-16 19:38:27,509[ISO8601] [TRACE] [main            ][                Main] -  метод processAddMoney завершился
+2018-09-16 19:38:30,308[ISO8601] [TRACE] [main            ][                Main] - запуск метода processGetDrink
+2018-09-16 19:38:30,309[ISO8601] [TRACE] [main            ][ru.kuznetsov.VendingMachine] -  метод isKeyValid запуск
+2018-09-16 19:38:30,309[ISO8601] [TRACE] [main            ][ru.kuznetsov.VendingMachine] - метод isKeyValid завершился
+2018-09-16 19:38:30,309[ISO8601] [TRACE] [main            ][                Main] -  метод processGetDrink завершился
+2018-09-16 19:53:40,653[ISO8601] [TRACE] [main            ][                Main] - запуск программы

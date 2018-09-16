@@ -1,15 +1,17 @@
-import ru.kuznetsov.CreaseMoneyException;
+import org.apache.log4j.Logger;
+import ru.kuznetsov.exception.CreaseMoneyException;
 import ru.kuznetsov.VendingMachine;
 import ru.kuznetsov.drinks.DrinkType;
-import ru.kuznetsov.drinks.NotFoundDrinkException;
+import ru.kuznetsov.exception.NotFoundDrinkException;
 
 import java.util.Scanner;
 
 public class Main {
+    private static final Logger LOG = Logger.getLogger(Main.class);
     private static VendingMachine vm = new VendingMachine();
 
     public static void main(String[] args) {
-
+        LOG.trace("запуск программы");
         System.out.println("Наши напитки: ");
         for (String line : vm.getDrinkTypes()) {
             System.out.println(line);
@@ -39,19 +41,24 @@ public class Main {
             }
             scan.nextLine();
         }
+        LOG.trace("конец программы ");
     }
 
     /**
      * обработка добавления денег в автомат
      * @param money - сумма
      */
+
     private static void processAddMoney(int money) {
+        LOG.trace("запуск метода processAddMoney ");
 
         try {
             System.out.println("Текущий баланс: " + vm.addMoney(money));
         } catch (CreaseMoneyException e) {
             System.out.println("куппюра замята, заберите обратно "+e.getMessage());
+            LOG.error("ошибка замятия купюры",e);
         }
+        LOG.trace(" метод processAddMoney завершился");
     }
 
     /**
@@ -59,6 +66,7 @@ public class Main {
      * @param key - код напитка в автомате
      */
     private static void processGetDrink(int key) {
+        LOG.trace("запуск метода processGetDrink");
 
         try {
         DrinkType drinkType = vm.giveMeADrink(key);
@@ -66,25 +74,29 @@ public class Main {
         }
         catch (NullPointerException n) {
             System.out.println("напиток не выдан.не хватает денег. закиньте больше денег ");
+            LOG.error("ошибка",n);
 
         }
         catch (ArrayIndexOutOfBoundsException a) {
             System.out.println("напиток не выдан.не правильно выбрана кнопка.выберите кнопку из списка");
+            LOG.error("ошибка",a);
 
         }
         catch (NotFoundDrinkException a) {
             System.out.println("напиток не выдан.напитка нет в наличии.иди в другой автомат");
+            LOG.error("ошибка",a);
 
         }
         catch (Exception e){
             System.out.println("еще какая то ошибка");
+            LOG.error("ошибка",e);
         }
         /*if (drinkType != null) {
             System.out.println("Ммм! " + drinkType.getName() + "!");
         } else {
             System.out.println("Напиток почему-то не получен...");
         }*/
-
+        LOG.trace(" метод processGetDrink завершился");
     }
 
     /**
