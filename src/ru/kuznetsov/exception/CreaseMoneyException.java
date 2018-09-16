@@ -1,7 +1,7 @@
-package ru.kuznetsov;
+package ru.kuznetsov.exception;
 
 public class CreaseMoneyException extends Exception {
-     CreaseMoneyException(String message) {
+     public CreaseMoneyException(String message) {
         super(message);
     }
 

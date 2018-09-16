@@ -1,11 +1,16 @@
 package ru.kuznetsov;
 
+import org.apache.log4j.Logger;
 import ru.kuznetsov.drinks.*;
+import ru.kuznetsov.exception.CreaseMoneyException;
+
+import java.time.LocalDate;
 
 /**
  * Торговый автомат
  */
 public class VendingMachine {
+    private static final Logger LOG = Logger.getLogger(VendingMachine.class);
     private double money = 0;
     private Product[] drinks = new Product[] {
            new Product(ColdDrinkType.COCA,34),
@@ -46,14 +51,13 @@ public class VendingMachine {
      */
     public DrinkType giveMeADrink(int key) throws Exception {
         if (!isKeyValid(key)) {
+            LOG.warn("возможна ошибка");
             throw new ArrayIndexOutOfBoundsException();
-
             // Неправильный код товара - товар не возвращается
         }
 
         Product selected = drinks[key];
         if (!isMoneyEnough(selected)) {
-
             // Нехватает денег - товар не возвращается
             return null;
         }
@@ -96,7 +100,15 @@ public class VendingMachine {
      * @return true если есть напиток с таким номером, иначе false
      */
     private boolean isKeyValid(int key) {
-        return key >=0 && key < drinks.length;
+        LOG.trace(" метод isKeyValid запуск");
+        boolean iskey = key >=0 && key < drinks.length;
+        if (key >=0 && key < drinks.length){
+
+        } else {
+            LOG.error("ошибка ");
+        }
+        LOG.trace("метод isKeyValid завершился");
+          return iskey;
     }
 
     /**
